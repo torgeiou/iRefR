@@ -1,0 +1,139 @@
+CHANGES IN iRefR VERSION 0.93:
+
+  SIGNIFICANT USER-VISIBLE CHANGES:
+
+    • Rnw files removed from distribution. Only pdf files included.
+    • Minor updates to iRefR_tutorial, get_irefindex.Rd and summary_table.Rd.
+
+  NEW FEATURES:
+
+    • None.
+
+  DEPRECATED & DEFUNCT:
+
+    • None
+
+  INSTALLATION:
+
+    • None.
+
+  BUG FIXES:
+
+    • None.
+
+CHANGES IN iRefR VERSION 0.92:
+
+  SIGNIFICANT USER-VISIBLE CHANGES:
+
+    • Directory tempdir() used to store iRefIndex files in examples (Rd documentation files).
+    • if(interactive()) {} condition used in "summary_graph.Rd" examples.
+
+  NEW FEATURES:
+
+    • None.
+
+  DEPRECATED & DEFUNCT:
+
+    • None
+
+  INSTALLATION:
+
+    • BuildVignettes set to FALSE at the DESCRIPTION file.
+
+  BUG FIXES:
+
+    • None.
+
+CHANGES IN iRefR VERSION 0.91:
+
+  SIGNIFICANT USER-VISIBLE CHANGES:
+
+    • Parameter "home" for the get_irefindex.R function used in documentation files.
+
+  NEW FEATURES:
+
+    • Optional parameter "home" added to get_irefindex.R to save files in the "R.home()" directory.
+
+  DEPRECATED & DEFUNCT:
+
+    • None
+
+  INSTALLATION:
+
+    • None
+
+  BUG FIXES:
+
+    • None.
+
+CHANGES IN iRefR VERSION 0.9:
+
+  SIGNIFICANT USER-VISIBLE CHANGES:
+
+    • Function "convert_MITAB_to_complexList" includes now an option to generate complexes from binaries having no bait-prey information.
+    • "iRefR and igraph" vignette created and released (as an additional file at the FTP site, not as a part of the package).
+
+  NEW FEATURES:
+
+    • None
+
+  DEPRECATED & DEFUNCT:
+
+    • None
+
+  INSTALLATION:
+
+    • None
+
+  BUG FIXES:
+
+    • Minor corrections to the text in the iRefR tutorial.
+    • Minor correction to function "summary_protein": Now column name tables contain the word "irigid" or "icrigid" depending on the case.
+
+CHANGES IN iRefR VERSION 0.8:
+
+  SIGNIFICANT USER-VISIBLE CHANGES:
+
+    • iRefR Tutorial improved and written using Sweave.
+    • NAMESPACE file added.
+    • Function "convert_complexList_to_MITAB" re-written; now more efficient.
+    • print statements replaced by cat statements
+
+  NEW FEATURES:
+
+    • None
+
+  DEPRECATED & DEFUNCT:
+
+    • None
+
+  INSTALLATION:
+
+    • None
+
+  BUG FIXES:
+
+    • iRefR tutorial now specifies how to select only human-human interactions before doing all analyses.
+
+CHANGES IN iRefR VERSION 0.7:
+
+  SIGNIFICANT USER-VISIBLE CHANGES:
+
+    • Most examples in Rd files were changed by faster ones.
+    • NEWS file added.
+
+  NEW FEATURES:
+
+    • None
+
+  DEPRECATED & DEFUNCT:
+
+    • None
+
+  INSTALLATION:
+
+    • None
+
+  BUG FIXES:
+
+    • Examples in Rd files and tutorial involving specific iROGs and icROGs, work now with iRefIndex v.8.0 instead of "current". This is because the iROGs are specific for each release and the examples wouldn't give the same results when working with a future release.
