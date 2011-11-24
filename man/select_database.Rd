@@ -9,7 +9,7 @@
      select_database(database, MITAB_table, flag)
      }
      \arguments{
-       \item{database}{Name of the protein interaction DB or vector of databases to extract from iRefIndex (options: "intact", "bind", "grid", "mint", "ophid", "MPPI", "HPRD", "dip", "CORUM", "MPACT").}
+       \item{database}{Name of the protein interaction DB or vector of databases to extract from iRefIndex (options: "intact", "bind", "grid", "mint", "ophid", "MPPI", "HPRD", "dip", "CORUM", "MPACT", "InnateDB", "MatrixDB", "mpilit", "mpiimex").}
        \item{MITAB_table}{iRefIndex/MITAB R table.}
        \item{flag}{Either "this_database" to get all "database" records, or "except_this_database" to get all records except for the ones belonging to "database". Default="this_database"}
      }

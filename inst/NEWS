@@ -1,3 +1,25 @@
+CHANGES IN iRefR VERSION 0.94:
+
+  SIGNIFICANT USER-VISIBLE CHANGES:
+
+    • None.
+
+  NEW FEATURES:
+
+    • Minor change to select_database.Rd, specifying the four new databases (InnateDB, MatrixDB, mpilit, mpiimex) that can be now selected.
+
+  DEPRECATED & DEFUNCT:
+
+    • Test data-set file removed.
+
+  INSTALLATION:
+
+    • None.
+
+  BUG FIXES:
+
+    • Date of current version of iRefIndex has been updated.
+
 CHANGES IN iRefR VERSION 0.93:
 
   SIGNIFICANT USER-VISIBLE CHANGES:

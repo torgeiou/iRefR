@@ -14,8 +14,8 @@ get_irefindex = function(tax_id="All", iref_version="current", data_folder=getwd
 
 	# 2. Get release dates and full URLs:
 	if (iref_version == "current") {
-		iref_version = "8.0"
-		release_date = "01192011"
+		iref_version = "9.0"
+		release_date = "10182011"
 		url = paste("ftp://ftp.no.embnet.org/irefindex/data/current/psimi_tab/MITAB2.6/", tax_id, ".mitab.", release_date, ".txt.zip", sep="")
 	} else {
 		if (iref_version == "7.0") {
@@ -23,6 +23,9 @@ get_irefindex = function(tax_id="All", iref_version="current", data_folder=getwd
 		}
 		if (iref_version == "8.0") {
 			release_date = "01192011"
+		}
+		if (iref_version == "9.0") {
+			release_date = "10182011"
 		}
 		url = paste("ftp://ftp.no.embnet.org/irefindex/data/archive/release_", iref_version, "/psimi_tab/MITAB2.6/", tax_id, ".mitab.", release_date, ".txt.zip", sep="")
 	}
