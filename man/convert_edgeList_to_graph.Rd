@@ -54,7 +54,7 @@
 
      ## Additional info if you are using "igraph":
      V(graph_binary_INTACT)$name
-     V(graph_binary_INTACT)[degree(graph_binary_INTACT) == 1]$name
+     V(graph_binary_INTACT)[igraph::degree(graph_binary_INTACT) == 1]$name
      #par(mfrow=c(2,3))
      #plot(graph_binary_INTACT, layout=layout.fruchterman.reingold, vertex.size=3, vertex.color="green", frame=TRUE, main="Binary", vertex.label=NA)
      #plot(graph_complex_INTACT_s, layout=layout.fruchterman.reingold, vertex.size=3, vertex.color="green", frame=TRUE, main="Complex Spoke", vertex.label=NA)

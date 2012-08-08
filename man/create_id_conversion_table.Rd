@@ -13,7 +13,7 @@ On iROGs and icROGs:
      }
      \arguments{
        \item{MITAB_table}{iRefIndex/MITAB R table.}
-       \item{data_folder}{Folder to save the text file: type "data" to save it in the "iRefR/data" directory, "home" to save it in the "R.home()" directory, or any other destination folder. Default = "data".}
+       \item{data_folder}{Folder to save the text file: type "data" to save it in the "iRefR/data" directory, "home" to save it in the "R.home()" directory, or any other destination folder. Default = getwd().}
        \item{output_filename}{File name for the conversion table files. Extensions ".txt" and ".RData" would be automatically added. Default="id_conversion_table"}
        \item{IDs_to_include}{Vector with the protein identifiers you want to convert from/to. iRefIndex iROGs and canonical iROGs are always included in the table. In addition, currently supports: UniProt ("uniprotkb"), RefSeq ("refseq"), GeneID ("entrezgene/locuslink"), Protein Data Bank ("PDB"), c("uniprotkb", "refseq", "entrezgene/locuslink") ("default") and all of them ("all"). Default = "default".}
      }

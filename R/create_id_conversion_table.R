@@ -1,7 +1,7 @@
 ####
 # Generate a lookup table to convert any major protein ID to another protein ID:
 ####
-create_id_conversion_table = function(MITAB_table, data_folder="data", output_filename="id_conversion_table", IDs_to_include=c("uniprotkb", "refseq", "entrezgene/locuslink")) {
+create_id_conversion_table = function(MITAB_table, data_folder=getwd(), output_filename="id_conversion_table", IDs_to_include=c("uniprotkb", "refseq", "entrezgene/locuslink")) {
 
 	# 1. Constructing output file names:
 	if (data_folder == "data") {

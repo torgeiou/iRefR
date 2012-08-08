@@ -18,6 +18,7 @@ The "complexList" format is one of the three table formats used by "iRefR", toge
      }
      \author{Antonio Mora <a.m.ortiz@biotek.uio.no>}
      \examples{
+     \dontrun{
      ## get tables
      irefindex_curr_ecoli = get_irefindex("562", "current", tempdir())
      iRef_binary = select_interaction_type("binary", irefindex_curr_ecoli)
@@ -28,4 +29,5 @@ The "complexList" format is one of the three table formats used by "iRefR", toge
      ## execute function
      consolidated_complexList = merge_complexes_lists(list(complex_complexList, binary_complexList))
      number_complexes_repeated_inside_lists_or_between_lists = dim(complex_complexList)[1] + dim(binary_complexList)[1] - dim(consolidated_complexList)[1]
+     }
      }

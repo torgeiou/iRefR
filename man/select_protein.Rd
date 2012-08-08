@@ -19,6 +19,7 @@
      }
      \author{Antonio Mora <a.m.ortiz@biotek.uio.no>}
      \examples{
+     \dontrun{
      ## get tables
      irefindex_80_mouse = get_irefindex("10090", "8.0", tempdir())
 
@@ -27,8 +28,8 @@
      output_2 = select_protein("icrogid", "4374882", irefindex_80_mouse, "not_full_complex")
      output_3 = select_protein("icrogid", "2892004", irefindex_80_mouse, "not_full_complex")
      output_4 = select_protein("icrogid", "2892004", irefindex_80_mouse, "full_complex")
-     #output_5 = select_protein("icrogid", "1365685", irefindex_80_mouse, "not_full_complex")
-     #output_6 = select_protein("icrogid", "1365685", irefindex_80_mouse, "full_complex")
+     output_5 = select_protein("icrogid", "1365685", irefindex_80_mouse, "not_full_complex")
+     output_6 = select_protein("icrogid", "1365685", irefindex_80_mouse, "full_complex")
 
      ## getting list of tables
      irog_list = c("1828087", "2892004", "1365685")
@@ -40,4 +41,5 @@
      ## getting single table
      irog_list = c("1828087", "2892004", "1365685")
      table_single = select_protein("irogid", irog_list, irefindex_80_mouse, "not_full_complex")
+     }
      }

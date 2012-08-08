@@ -27,6 +27,7 @@ On iROGs and icROGs:
      }
      \author{Antonio Mora <a.m.ortiz@biotek.uio.no>}
      \examples{
+     \dontrun{
      ## get tables
      irefindex_curr_ecoli = get_irefindex("562", "current", tempdir())
      iRef_binary = select_interaction_type("binary", irefindex_curr_ecoli)
@@ -35,12 +36,13 @@ On iROGs and icROGs:
      known_complexes_ecoli_complexList = convert_MITAB_to_complexList(irefindex_curr_ecoli, canonical_rep="yes", include_generated_complexes="no")
 
      ## more examples
-     #generated_complexes_ecoli_complexList = convert_MITAB_to_complexList(iRef_binary, canonical_rep="yes", include_generated_complexes="yes", list_methods="default")
-     #all_complexes_ecoli_complexList = convert_MITAB_to_complexList(irefindex_curr_ecoli, canonical_rep="yes", include_generated_complexes="yes", list_methods="default")
-     #number_unique_complexes_all = length(unique(all_complexes_ecoli_complexList[,2]))
+     generated_complexes_ecoli_complexList = convert_MITAB_to_complexList(iRef_binary, canonical_rep="yes", include_generated_complexes="yes", list_methods="default")
+     all_complexes_ecoli_complexList = convert_MITAB_to_complexList(irefindex_curr_ecoli, canonical_rep="yes", include_generated_complexes="yes", list_methods="default")
+     number_unique_complexes_all = length(unique(all_complexes_ecoli_complexList[,2]))
 
-     #known_complexes_ecoli_complexList_extended = convert_MITAB_to_complexList(irefindex_curr_ecoli, canonical_rep="yes", include_generated_complexes="no", list_methods="default", bait_use="include_non_baits")
-     #generated_complexes_ecoli_complexList_extended = convert_MITAB_to_complexList(iRef_binary, canonical_rep="yes", include_generated_complexes="yes", list_methods="default", bait_use="include_non_baits")
-     #all_complexes_ecoli_complexList_extended = convert_MITAB_to_complexList(irefindex_curr_ecoli, canonical_rep="yes", include_generated_complexes="yes", list_methods="default", bait_use="include_non_baits")
-     #number_unique_complexes_all_extended = length(unique(all_complexes_ecoli_complexList_extended[,2]))
+     known_complexes_ecoli_complexList_extended = convert_MITAB_to_complexList(irefindex_curr_ecoli, canonical_rep="yes", include_generated_complexes="no", list_methods="default", bait_use="include_non_baits")
+     generated_complexes_ecoli_complexList_extended = convert_MITAB_to_complexList(iRef_binary, canonical_rep="yes", include_generated_complexes="yes", list_methods="default", bait_use="include_non_baits")
+     all_complexes_ecoli_complexList_extended = convert_MITAB_to_complexList(irefindex_curr_ecoli, canonical_rep="yes", include_generated_complexes="yes", list_methods="default", bait_use="include_non_baits")
+     number_unique_complexes_all_extended = length(unique(all_complexes_ecoli_complexList_extended[,2]))
+     }
      }

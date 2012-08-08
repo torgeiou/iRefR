@@ -1,3 +1,69 @@
+CHANGES IN iRefR VERSION 0.97:
+
+  SIGNIFICANT USER-VISIBLE CHANGES:
+
+    • None.
+
+  NEW FEATURES:
+
+    • None.
+
+  DEPRECATED & DEFUNCT:
+
+    • None.
+
+  INSTALLATION:
+
+    • None.
+
+  BUG FIXES:
+
+    • Minor changes to follow the size and execution time policies of CRAN.
+
+CHANGES IN iRefR VERSION 0.96:
+
+  SIGNIFICANT USER-VISIBLE CHANGES:
+
+    • iRefR depends again from "igraph", which has changed and now considers all vectors starting from position one and not from position zero. From now on, "iRefR" will depend on "igraph" 0.6 or higher. The "iRefR and igraph" tutorial was also changed accordingly (see: ftp://ftp.no.embnet.org/irefindex/iRefR/current/).
+
+  NEW FEATURES:
+
+    • None.
+
+  DEPRECATED & DEFUNCT:
+
+    • None.
+
+  INSTALLATION:
+
+    • None.
+
+  BUG FIXES:
+
+    • Minor change to create_id_conversion_table: Now the default option is getwd().
+
+CHANGES IN iRefR VERSION 0.95:
+
+  SIGNIFICANT USER-VISIBLE CHANGES:
+
+    • Temporarily, iRefR will not depend on "igraph" but on "igraph0" instead. This is due to the fact that the announced next version of "igraph" will be incompatible with the previous one, and the igraph maintainers have kept the old version as a package called "igraph0", i.e., "igraph0" is identical to "igraph" v.0.5.5. When the new igraph is released and tested, we may use "igraph" again.
+
+  NEW FEATURES:
+
+    • None.
+
+  DEPRECATED & DEFUNCT:
+
+    • None.
+
+  INSTALLATION:
+
+    • None.
+
+  BUG FIXES:
+
+    • None.
+
 CHANGES IN iRefR VERSION 0.94:
 
   SIGNIFICANT USER-VISIBLE CHANGES:

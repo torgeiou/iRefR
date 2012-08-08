@@ -18,6 +18,7 @@
      }
      \author{Antonio Mora <a.m.ortiz@biotek.uio.no>}
      \examples{
+     \dontrun{
      ## get tables
      irefindex_80_mouse = get_irefindex("10090", "8.0", tempdir())
 
@@ -26,4 +27,5 @@
      output_2 = summary_protein("icrogid", "4374882", irefindex_80_mouse)
      output_3 = summary_protein("icrogid", "2892004", irefindex_80_mouse)
      output_4 = summary_protein("icrogid", "1365685", irefindex_80_mouse)
+     }
      }
