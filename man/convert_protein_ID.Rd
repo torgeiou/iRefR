@@ -29,10 +29,12 @@ On iROGs and icROGs:
      ## converting from geneID to uniprotID
      uniprot_id_value = convert_protein_ID("entrezgene/locuslink", "2986728", "uniprotkb", id_conversion_table_ecoli)
 
+     \dontrun{
      ## converting a list of iROG IDs (from version 8.0) to RefSeq IDs
      irog_list = c("9917588", "9917576", "9917577", "369724", "593426", "3033592")
      refseq_list = list()
      for (i in irog_list) {
      	refseq_list[[i]] = convert_protein_ID("irogid", i, "refseq", id_conversion_table_ecoli)
+     }
      }
      }

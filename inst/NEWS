@@ -1,3 +1,38 @@
+CHANGES IN iRefR VERSION 1.00:
+
+  SIGNIFICANT USER-VISIBLE CHANGES:
+
+    • None.
+
+  NEW FEATURES:
+
+    • convert_MITAB_to_edgeList.R and convert_MITAB_to_edgeList.Rd: New optional parameter "node_names":
+Now there are two possible ways to name the nodes in a network. The first one is still the ROG IDs (either iROGs or icROGs), and the second one is the UIDs. The UIDs contain UniProt info when available; otherwise, RefSeq ID, and, in the last case, the ROG ID; this is, for E.coli, the first interactor column contains 58% UniProt, 1.9% RefSeq and still 30.3% ROG IDs (the remaining 9.8% being complex identifiers), while the second interactor is 66.6% UniProt, 3.8% RefSeq and 29.6% rogids.
+This change is useful because the user can now work with UniProt IDs from the beginning without doing translation. However, ROG IDs are still the default option. So, by default, all old code still works the same.
+
+    • convert_MITAB_to_edgeList.R and convert_MITAB_to_edgeList.Rd: New attributes for the edgeList format:
+Now, besides the node names and the edge weights, an edge in an edgeList will include two additional graph attributes: The first one is the RIG ID of the edge (either iRIG ID/icRIG ID) and the second one is the edgeType (complex, polymer or binary).
+This is convenient for two reasons: First, now it is possible to easily find info of edges such as in iRefScape: iRIG IDs allow the user to have a unique identifier for that edge and go back to the MITAB table and retrieve any info on that specific edge, while edgetypes can f.ex. allow to draw complexes and binaries with different colors, allowing an improved visualization, or to change the weight of all complexes (say, to 0.5, f.ex.), in a simple way.
+Second, and more important, iRefIndex contains pairs of nodes which are linked for more than one different interaction (RIG ID); for example, a binary and a complex interaction (C|X) or two different but overlapping complexes (C|C). So far, those multiple edges were fused into a single edge by default, besides being different interactions. From now on, iRefR allows the user to include multiple edges due to multiple iRIGs (C|X and C1|C2 cases).
+These attributes are only supported for the igraph package, not for graph.
+
+    • convert_MITAB_to_edgeList.R and convert_MITAB_to_edgeList.Rd: New optional parameter "multi_edge":
+As a consequence of the new attributes, now the edgeList is originally of a multigraph nature. Therefore, a new option allows the user to use the multigraph view or to combine the multiple edges in order to get the same graph than in previous iRefR versions. The default option is "no" (i.e., generate old single-edged type of graphs), therefore all code written under old iRefR versions will be compatible, with the difference that now those single edges will have the two additional attributes, however in a combined fashion (ex. "C|X" if the edge is the fusion of these two edge types). The option multi_edge="yes" will generate the new multigraph view.
+
+    • convert_edgeList_to_graph.R: Minor changes, so "igraph" graphs now include new attributes.
+
+  DEPRECATED & DEFUNCT:
+
+    • None.
+
+  INSTALLATION:
+
+    • None.
+
+  BUG FIXES:
+
+    • summary_protein.R was reporting irigid info with the icrog option (thanks to Daniel Carbajo Pedrosa for bug report).
+
 CHANGES IN iRefR VERSION 0.97:
 
   SIGNIFICANT USER-VISIBLE CHANGES:
