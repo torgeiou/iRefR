@@ -11,7 +11,8 @@ On iROGs and icROGs:
 "iRefIndex" guarantees the non-redundancy of protein information by assigning a different protein identifier (called Redundant Object Group, ROG) to every different protein sequence. This is called the "non-canonical" representation. At the same time, groups of non-redundant proteins might be different isoforms of a given protein, and, in this case, the identifier of one protein of the group (called cROG or canonical ROG) is chosen to represent the entire group of similar proteins. This is called the "canonical" representation of proteins. The iROG and icROG IDs correspond to integer representations of the ROG and cROG, respectively. Most of the "iRefR" functions work with iROGs and icROGs.
      }
      \usage{
-     convert_complexList_to_MITAB(complexList, MITAB_table, canonical_rep, include_generated_complexes)
+     convert_complexList_to_MITAB(complexList, MITAB_table, canonical_rep,
+ include_generated_complexes)
      }
      \arguments{
        \item{complexList}{iRefIndex/complexList R table.}
@@ -22,28 +23,37 @@ On iROGs and icROGs:
      \value{
      \item{MITAB_table}{iRefIndex/MITAB R table corresponding to the original complexList table.}
      }
-     \author{Antonio Mora <a.m.ortiz@biotek.uio.no>}
+     \author{Antonio Mora <antoniocmora@gmail.com>}
      \examples{
      \dontrun{
      ## get tables
      irefindex_curr_ecoli = get_irefindex("562", "current", tempdir())
      iRef_binary = select_interaction_type("binary", irefindex_curr_ecoli)
      iRef_complex = select_interaction_type("complex", irefindex_curr_ecoli)
-     known_complexes_ecoli_complexList = convert_MITAB_to_complexList(iRef_complex, canonical_rep="yes", include_generated_complexes="no", list_methods="default")
+     known_complexes_ecoli_complexList = convert_MITAB_to_complexList(iRef_complex,
+ canonical_rep="yes", include_generated_complexes="no", list_methods="default")
 
      ## execute function
-     reconstructed_known_ecoli_MITAB = convert_complexList_to_MITAB(known_complexes_ecoli_complexList, irefindex_curr_ecoli, "yes", "no")
+     reconstructed_known_ecoli_MITAB = convert_complexList_to_MITAB(
+ known_complexes_ecoli_complexList, irefindex_curr_ecoli, "yes", "no")
      setequal(dim(iRef_complex), dim(reconstructed_known_ecoli_MITAB))
 
      ## more examples
-     generated_complexes_ecoli_complexList = convert_MITAB_to_complexList(iRef_binary, canonical_rep="yes", include_generated_complexes="yes", list_methods="default")
-     reconstructed_generated_ecoli_MITAB = convert_complexList_to_MITAB(generated_complexes_ecoli_complexList, irefindex_curr_ecoli, "yes", "yes")
-     reconstructed_complexList = convert_MITAB_to_complexList(reconstructed_generated_ecoli_MITAB, canonical_rep="yes", include_generated_complexes="yes")
+     generated_complexes_ecoli_complexList = convert_MITAB_to_complexList(iRef_binary,
+ canonical_rep="yes", include_generated_complexes="yes", list_methods="default")
+     reconstructed_generated_ecoli_MITAB = convert_complexList_to_MITAB(
+ generated_complexes_ecoli_complexList, irefindex_curr_ecoli, "yes", "yes")
+     reconstructed_complexList = convert_MITAB_to_complexList(
+ reconstructed_generated_ecoli_MITAB, canonical_rep="yes", include_generated_complexes=
+ "yes")
      setequal(dim(generated_complexes_ecoli_complexList), dim(reconstructed_complexList))
 
-     all_complexes_ecoli_complexList = convert_MITAB_to_complexList(irefindex_curr_ecoli, canonical_rep="yes", include_generated_complexes="yes", list_methods="default")
-     reconstructed_all_ecoli_MITAB = convert_complexList_to_MITAB(all_complexes_ecoli_complexList, irefindex_curr_ecoli, "yes", "yes")
-     reconstructed_all_complexList = convert_MITAB_to_complexList(reconstructed_all_ecoli_MITAB, canonical_rep="yes", include_generated_complexes="yes")
+     all_complexes_ecoli_complexList = convert_MITAB_to_complexList(irefindex_curr_ecoli,
+ canonical_rep="yes", include_generated_complexes="yes", list_methods="default")
+     reconstructed_all_ecoli_MITAB = convert_complexList_to_MITAB(
+ all_complexes_ecoli_complexList, irefindex_curr_ecoli, "yes", "yes")
+     reconstructed_all_complexList = convert_MITAB_to_complexList(
+ reconstructed_all_ecoli_MITAB, canonical_rep="yes", include_generated_complexes="yes")
      setequal(dim(all_complexes_ecoli_complexList), dim(reconstructed_all_complexList))
      }
      }

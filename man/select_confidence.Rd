@@ -22,7 +22,7 @@ The np score (number pmids) is the total number of unique PMIDs used to support 
      \value{
      \item{MITAB_output}{iRefIndex/MITAB R table with the previously specified features.}
      }
-     \author{Antonio Mora <a.m.ortiz@biotek.uio.no>}
+     \author{Antonio Mora <antoniocmora@gmail.com>}
      \examples{
      ## get tables
      irefindex_curr_ecoli = get_irefindex("562", "current", tempdir())

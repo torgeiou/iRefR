@@ -17,7 +17,7 @@ Here "iRefR" uses the "graph", "igraph" and "RBGL" libraries.
      \value{
      \item{output}{R list containing: Number of nodes and edges, degree distribution, nodes per connected component and graphs per connected component. A plot of the graph is also produced if the "igraph" option is chosen.}
      }
-     \author{Antonio Mora <a.m.ortiz@biotek.uio.no>}
+     \author{Antonio Mora <antoniocmora@gmail.com>}
      \examples{
      ## get tables
      irefindex_curr_ecoli = get_irefindex("562", "current", tempdir())
@@ -33,7 +33,8 @@ Here "iRefR" uses the "graph", "igraph" and "RBGL" libraries.
      	x11(); hist(summary$degree_distribution)
 
      	table(summary$nodes_per_connected_component)
-     	x11(); barplot(summary$nodes_per_connected_component, xlab="Size Components", ylab="Number Components")
+     	x11(); barplot(summary$nodes_per_connected_component, xlab="Size Components",
+ ylab="Number Components")
      	title(main="Distribution of Connected Components")
 
      	summary$graph_per_module[[1]]

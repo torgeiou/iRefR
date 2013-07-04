@@ -19,11 +19,12 @@ create_id_conversion_table = function(MITAB_table, data_folder=getwd(), output_f
 	irogid = c(as.vector(MITAB_table$irogida), as.vector(MITAB_table$irogidb))
 	icrogid = c(as.vector(MITAB_table$icrogida), as.vector(MITAB_table$icrogidb))
 	alt = c(as.vector(MITAB_table$altA), as.vector(MITAB_table$altB))
-	initial_table = data.frame(irogid, icrogid, alt)
+	uid = c(as.vector(MITAB_table$X.uidA), as.vector(MITAB_table$uidB))
+	initial_table = data.frame(irogid, icrogid, alt, uid)
 	initial_table = unique(initial_table)
 	extended_list = list(); n=0
 	for (i in 1:dim(initial_table)[1]) {
-		list_alts <- strsplit(as.character(initial_table[i,3]),"\\|")[[1]]
+		list_alts <- c(strsplit(as.character(initial_table[i,3]),"\\|")[[1]], as.character(initial_table[i,4]))
 		for (j in 1:length(list_alts)) {
 			tmp1 = strsplit(list_alts[j], "\\:")[[1]]
 			if (setequal(IDs_to_include,"all")==TRUE) {
@@ -43,7 +44,7 @@ create_id_conversion_table = function(MITAB_table, data_folder=getwd(), output_f
 		if (as.integer(dim(initial_table)[1]*3/4) == i) {cat("75% completed...\n")}
 	}
 	# Convert list to matrix:
-	extended_table = do.call(rbind, extended_list)
+	extended_table = unique(do.call(rbind, extended_list))
 	rownames(extended_table) = NULL; colnames(extended_table) = c("id_type", "id_value", "irogid", "icrogid")
 
 	# 4. Generate output:

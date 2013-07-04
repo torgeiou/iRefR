@@ -20,7 +20,7 @@ On iROGs and icROGs:
      \value{
      \item{MITAB_table}{iRefIndex/MITAB R table corresponding to the original edgeList.}
      }
-     \author{Antonio Mora <a.m.ortiz@biotek.uio.no>}
+     \author{Antonio Mora <antoniocmora@gmail.com>}
      \examples{
      ## get tables
      irefindex_curr_ecoli = get_irefindex("562", "current", tempdir())
@@ -28,21 +28,28 @@ On iROGs and icROGs:
      binary_INTACT = select_interaction_type("binary", all_INTACT)
      complex_INTACT = select_interaction_type("complex", all_INTACT)
      edgeList_binary_INTACT = convert_MITAB_to_edgeList(binary_INTACT)
-     edgeList_complex_INTACT_s = convert_MITAB_to_edgeList(complex_INTACT, "default", "spoke")
+     edgeList_complex_INTACT_s = convert_MITAB_to_edgeList(complex_INTACT, "default",
+ "spoke")
      edgeList_all_INTACT = convert_MITAB_to_edgeList(all_INTACT, "default", "spoke")
 
      ## execute function
-     new_binary = convert_edgeList_to_MITAB(edgeList_binary_INTACT, irefindex_curr_ecoli, "yes", "binary")
+     new_binary = convert_edgeList_to_MITAB(edgeList_binary_INTACT, irefindex_curr_ecoli,
+ "yes", "binary")
      reconstructed_binary_INTACT = select_database("intact", new_binary, "this_database")
      setequal(dim(binary_INTACT), dim(reconstructed_binary_INTACT))
 
-     new_complex_s = convert_edgeList_to_MITAB(edgeList_complex_INTACT_s, irefindex_curr_ecoli, "yes", "complex")
-     reconstructed_complex_INTACT_s = select_database("intact", new_complex_s, "this_database")
+     new_complex_s = convert_edgeList_to_MITAB(edgeList_complex_INTACT_s,
+ irefindex_curr_ecoli, "yes", "complex")
+     reconstructed_complex_INTACT_s = select_database("intact", new_complex_s,
+ "this_database")
      setequal(dim(complex_INTACT), dim(reconstructed_complex_INTACT_s))
 
      new_all = convert_edgeList_to_MITAB(edgeList_all_INTACT, irefindex_curr_ecoli)
      reconstructed_all_INTACT = select_database("intact", new_all, "this_database")
      setequal(dim(all_INTACT), dim(reconstructed_all_INTACT))
 
-     # Note that the dimensions would not be equal for the directed case at previous examples because only records with baits can be reconstructed. Directed edgeLists only include information with baits, so that all other cases are ignored during edgeList generation and there is no way to go back to the original MITAB.
+     # Note that the dimensions would not be equal for the directed case at previous
+     # examples because only records with baits can be reconstructed. Directed edgeLists
+     # only include information with baits, so that all other cases are ignored during
+     # edgeList generation and there is no way to go back to the original MITAB.
      }

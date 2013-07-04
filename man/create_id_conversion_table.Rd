@@ -20,11 +20,12 @@ On iROGs and icROGs:
      \value{
      \item{output}{Lookup table including iROG ID, icROG ID, and the other specified protein IDs.}
      }
-     \author{Antonio Mora <a.m.ortiz@biotek.uio.no>}
+     \author{Antonio Mora <antoniocmora@gmail.com>}
      \examples{
      ## get table
      irefindex_curr_ecoli = get_irefindex("562", "current", tempdir())
 
      ## execute function
-     id_conversion_table_ecoli = create_id_conversion_table(irefindex_curr_ecoli, tempdir(), "id_conversion_table_562_a")
+     id_conversion_table_ecoli = create_id_conversion_table(irefindex_curr_ecoli,
+ tempdir(), "id_conversion_table_562_a")
      }

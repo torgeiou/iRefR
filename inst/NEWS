@@ -1,3 +1,28 @@
+CHANGES IN iRefR VERSION 1.1:
+
+  SIGNIFICANT USER-VISIBLE CHANGES:
+
+    • None.
+
+  NEW FEATURES:
+
+    • Updated "get_irefindex" function, now able to download the most recent iRefIndex releases (v.10.0, 11.0 and 12.0) from the new iRefIndex website (http://irefindex.org).
+    • Improved "select_database" function, now makes a case-insensitive search.
+    • Modified "create_id_conversion_table" function, now is functional besides the changes introduced after iRefIndex 10.0 regarding identifiers removed from the altA and altB columns and located into the uidA and uidB columns.
+    • Improved "select_protein" function, now allows the user to select a protein using the UIDs (besides the ROG IDs).
+
+  DEPRECATED & DEFUNCT:
+
+    • None.
+
+  INSTALLATION:
+
+    • None.
+
+  BUG FIXES:
+
+    • Length of the lines of code in examples reduced to less than 90 characters in order the code to fit in the manual.
+
 CHANGES IN iRefR VERSION 1.00:
 
   SIGNIFICANT USER-VISIBLE CHANGES:

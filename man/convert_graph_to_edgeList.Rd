@@ -16,7 +16,7 @@
      \value{
      \item{output}{iRefIndex/edgeList R table corresponding to the original graph.}
      }
-     \author{Antonio Mora <a.m.ortiz@biotek.uio.no>}
+     \author{Antonio Mora <antoniocmora@gmail.com>}
      \examples{
      ## get tables
      irefindex_curr_ecoli = get_irefindex("562", "current", tempdir())
@@ -26,27 +26,41 @@
 
      ## generate graphs
      edgeList_binary_INTACT = convert_MITAB_to_edgeList(binary_INTACT)
-     edgeList_binary_INTACT_dir = convert_MITAB_to_edgeList(binary_INTACT, "default", "bipartite", "yes", "directed")
-     edgeList_complex_INTACT_s = convert_MITAB_to_edgeList(complex_INTACT, "default", "spoke")
-     edgeList_complex_INTACT_sdir = convert_MITAB_to_edgeList(complex_INTACT, "default", "spoke", "yes", "directed")
+     edgeList_binary_INTACT_dir = convert_MITAB_to_edgeList(binary_INTACT, "default",
+ "bipartite", "yes", "directed")
+     edgeList_complex_INTACT_s = convert_MITAB_to_edgeList(complex_INTACT, "default",
+ "spoke")
+     edgeList_complex_INTACT_sdir = convert_MITAB_to_edgeList(complex_INTACT, "default",
+ "spoke", "yes", "directed")
 
-     graph_binary_INTACT = convert_edgeList_to_graph(edgeList_binary_INTACT, "undirected")
-     graph_binary_INTACT_dir = convert_edgeList_to_graph(edgeList_binary_INTACT_dir, "directed")
+     graph_binary_INTACT = convert_edgeList_to_graph(edgeList_binary_INTACT,
+ "undirected")
+     graph_binary_INTACT_dir = convert_edgeList_to_graph(edgeList_binary_INTACT_dir,
+ "directed")
      graph_complex_INTACT_s = convert_edgeList_to_graph(edgeList_complex_INTACT_s)
-     graph_complex_INTACT_sdir = convert_edgeList_to_graph(edgeList_complex_INTACT_sdir, "directed")
+     graph_complex_INTACT_sdir = convert_edgeList_to_graph(edgeList_complex_INTACT_sdir,
+ "directed")
 
      ## execute function
-     reconstructed_edgeList_binary_INTACT = convert_graph_to_edgeList(graph_binary_INTACT)
+     reconstructed_edgeList_binary_INTACT = convert_graph_to_edgeList(
+ graph_binary_INTACT)
      setequal(dim(edgeList_binary_INTACT), dim(reconstructed_edgeList_binary_INTACT))
 
-     reconstructed_edgeList_binary_INTACT_dir = convert_graph_to_edgeList(graph_binary_INTACT_dir, "directed")
-     setequal(dim(edgeList_binary_INTACT_dir), dim(reconstructed_edgeList_binary_INTACT_dir))
+     reconstructed_edgeList_binary_INTACT_dir = convert_graph_to_edgeList(
+ graph_binary_INTACT_dir, "directed")
+     setequal(dim(edgeList_binary_INTACT_dir), dim(
+ reconstructed_edgeList_binary_INTACT_dir))
 
-     reconstructed_edgeList_complex_INTACT_s = convert_graph_to_edgeList(graph_complex_INTACT_s)
-     setequal(dim(edgeList_complex_INTACT_s), dim(reconstructed_edgeList_complex_INTACT_s))
+     reconstructed_edgeList_complex_INTACT_s = convert_graph_to_edgeList(
+ graph_complex_INTACT_s)
+     setequal(dim(edgeList_complex_INTACT_s), dim(
+ reconstructed_edgeList_complex_INTACT_s))
 
-     reconstructed_edgeList_complex_INTACT_sdir = convert_graph_to_edgeList(graph_complex_INTACT_sdir, "directed")
-     setequal(dim(edgeList_complex_INTACT_sdir), dim(reconstructed_edgeList_complex_INTACT_sdir))
-     # NOTE: All four tests give "TRUE" when using "igraph" as graphical package, while give "FALSE" when
-     # using "graph", due to the lack of polymer information in the "graph" option.
+     reconstructed_edgeList_complex_INTACT_sdir = convert_graph_to_edgeList(
+ graph_complex_INTACT_sdir, "directed")
+     setequal(dim(edgeList_complex_INTACT_sdir), dim(
+ reconstructed_edgeList_complex_INTACT_sdir))
+     # NOTE: All four tests give "TRUE" when using "igraph" as graphical package, while
+     # give "FALSE" when using "graph", due to the lack of polymer information in the
+     # "graph" option.
      }

@@ -16,7 +16,7 @@
      \value{
      \item{output}{R list containing: Number of interactions per interaction type, interactors in binary interactions, interactors in complex interactions and interactors in polymer interactions.}
      }
-     \author{Antonio Mora <a.m.ortiz@biotek.uio.no>}
+     \author{Antonio Mora <antoniocmora@gmail.com>}
      \examples{
      \dontrun{
      ## get tables

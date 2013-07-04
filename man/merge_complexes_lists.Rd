@@ -16,7 +16,7 @@ The "complexList" format is one of the three table formats used by "iRefR", toge
      \value{
      \item{result}{Table in the "complexList" format, with the prioritized merging of a set of tables in the "complexList" format.}
      }
-     \author{Antonio Mora <a.m.ortiz@biotek.uio.no>}
+     \author{Antonio Mora <antoniocmora@gmail.com>}
      \examples{
      \dontrun{
      ## get tables
@@ -27,7 +27,9 @@ The "complexList" format is one of the three table formats used by "iRefR", toge
      binary_complexList = convert_MITAB_to_complexList(iRef_binary, "yes", "yes")
 
      ## execute function
-     consolidated_complexList = merge_complexes_lists(list(complex_complexList, binary_complexList))
-     number_complexes_repeated_inside_lists_or_between_lists = dim(complex_complexList)[1] + dim(binary_complexList)[1] - dim(consolidated_complexList)[1]
+     consolidated_complexList = merge_complexes_lists(list(complex_complexList,
+ binary_complexList))
+     number_complexes_repeated_inside_lists_or_between_lists = dim(
+ complex_complexList)[1] + dim(binary_complexList)[1] - dim(consolidated_complexList)[1]
      }
      }

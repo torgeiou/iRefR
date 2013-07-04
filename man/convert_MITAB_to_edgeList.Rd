@@ -11,7 +11,8 @@ On iROGs and icROGs:
 "iRefIndex" also stores the Unique Identifier, UID, which is a protein identifier that represents a protein with its UniProt identifier wherever possible. If this is unknown, uses its RefSeq identifier and, if none of these exists, it uses the ROG ID.
      }
      \usage{
-     convert_MITAB_to_edgeList(MITAB_table, edge_weight_col, complex_rep, canonical_rep, directionality, node_names, multi_edge)
+     convert_MITAB_to_edgeList(MITAB_table, edge_weight_col, complex_rep, canonical_rep,
+ directionality, node_names, multi_edge)
      }
      \arguments{
        \item{MITAB_table}{iRefIndex/MITAB R table.}
@@ -25,7 +26,7 @@ On iROGs and icROGs:
      \value{
      \item{edgeList}{iRefIndex/edgeList R table with the previously specified parameters.}
      }
-     \author{Antonio Mora <a.m.ortiz@biotek.uio.no>}
+     \author{Antonio Mora <antoniocmora@gmail.com>}
      \examples{
      ## get tables
      irefindex_curr_ecoli = get_irefindex("562", "9.0", tempdir())
@@ -36,24 +37,33 @@ On iROGs and icROGs:
      ## execute function
      # NOTE: The matrix model is more time-consuming.
      edgeList_binary_INTACT = convert_MITAB_to_edgeList(binary_INTACT)
-     edgeList_complex_INTACT_s = convert_MITAB_to_edgeList(complex_INTACT, "default", "spoke")
+     edgeList_complex_INTACT_s = convert_MITAB_to_edgeList(complex_INTACT, "default",
+ "spoke")
 
      \dontrun{
-     edgeList_complex_INTACT_m = convert_MITAB_to_edgeList(complex_INTACT, "default", "matrix")
+     edgeList_complex_INTACT_m = convert_MITAB_to_edgeList(complex_INTACT, "default",
+ "matrix")
      edgeList_all_INTACT = convert_MITAB_to_edgeList(all_INTACT, "default", "spoke")
 
-     edgeList_binary_INTACT_dir = convert_MITAB_to_edgeList(binary_INTACT, "default", "bipartite", "yes", "directed")
-     edgeList_complex_INTACT_sdir = convert_MITAB_to_edgeList(complex_INTACT, "default", "spoke", "yes", "directed")
-     edgeList_all_INTACT_dir = convert_MITAB_to_edgeList(all_INTACT, "default", "spoke", "yes", "directed")
+     edgeList_binary_INTACT_dir = convert_MITAB_to_edgeList(binary_INTACT, "default",
+ "bipartite", "yes", "directed")
+     edgeList_complex_INTACT_sdir = convert_MITAB_to_edgeList(complex_INTACT, "default",
+ "spoke", "yes", "directed")
+     edgeList_all_INTACT_dir = convert_MITAB_to_edgeList(all_INTACT, "default", "spoke",
+ "yes", "directed")
 
      # Multi-edge interaction (C|X case) using UIDs:
-     edgeList_irefindex = convert_MITAB_to_edgeList(irefindex_curr_ecoli, node_names="uids", multi_edge="no")
+     edgeList_irefindex = convert_MITAB_to_edgeList(irefindex_curr_ecoli, node_names=
+ "uids", multi_edge="no")
      chosen_int = 1		# Choose first multiple edge in the data frame
-     rigids_multi_edge = edgeList_irefindex[grep("C\\|X", edgeList_irefindex[,4])[[chosen_int]], 3]
+     rigids_multi_edge = edgeList_irefindex[grep("C\\|X", edgeList_irefindex[,4])[[
+ chosen_int]], 3]
      rigids_multi_edge = strsplit(rigids_multi_edge, "|", fixed="TRUE")[[1]]
 
-     #edgeList_irefindex = convert_MITAB_to_edgeList(irefindex_curr_ecoli, node_names="uids", multi_edge="yes")
-     index_interesting_multi_edge = unlist(lapply(rigids_multi_edge, grep, edgeList_irefindex[,3]))
+     #edgeList_irefindex = convert_MITAB_to_edgeList(irefindex_curr_ecoli, node_names=
+     #"uids", multi_edge="yes")
+     index_interesting_multi_edge = unlist(lapply(rigids_multi_edge, grep,
+ edgeList_irefindex[,3]))
      edgeList_interesting_complex = edgeList_irefindex[index_interesting_multi_edge,]
      graph_irefindex = convert_edgeList_to_graph(edgeList_interesting_complex)
      list_edge_colors = NULL
@@ -61,9 +71,12 @@ On iROGs and icROGs:
      list_edge_colors[which(edgeList_interesting_complex[,3]=="634347")] = "red"
      list_edge_colors[which(edgeList_interesting_complex[,3]=="922617")] = "green"
      list_edge_colors[which(edgeList_interesting_complex[,3]=="982855")] = "purple"
-     graph_irefindex <- set.edge.attribute(graph_irefindex, "color", value=list_edge_colors)
+     graph_irefindex <- set.edge.attribute(graph_irefindex, "color", value=
+ list_edge_colors)
 
-     plot(graph_irefindex, layout=layout.kamada.kawai, vertex.label=V(graph_irefindex)$name, vertex.size=7, main="multi_edge interactions")
-     legend("bottomright", c("complex1", "binary", "complex2", "complex3"), fill=c("blue", "red", "green", "purple"))
+     plot(graph_irefindex, layout=layout.kamada.kawai, vertex.label=
+ V(graph_irefindex)$name, vertex.size=7, main="multi_edge interactions")
+     legend("bottomright", c("complex1", "binary", "complex2", "complex3"),
+ fill=c("blue", "red", "green", "purple"))
      }
      }

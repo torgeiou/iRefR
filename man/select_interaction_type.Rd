@@ -15,7 +15,7 @@
      \value{
      \item{output}{R Table containing the requested subset of iRefIndex.}
      }
-     \author{Antonio Mora <a.m.ortiz@biotek.uio.no>}
+     \author{Antonio Mora <antoniocmora@gmail.com>}
      \examples{
      ## get tables
      irefindex_curr_ecoli = get_irefindex("562", "current", tempdir())
@@ -26,6 +26,8 @@
      iRef_polymer = select_interaction_type("polymer", irefindex_curr_ecoli)
      
      ## get results
-     #pie_int_type = pie(c(dim(iRef_binary)[1], dim(iRef_polymer)[1], dim(iRef_complex)[1]),labels=c("Binaries","Polymers","Complexes"), main="iRefIndex Records per Interaction Type")
+     #pie_int_type = pie(c(dim(iRef_binary)[1], dim(iRef_polymer)[1], dim(
+     #iRef_complex)[1]), labels=c("Binaries","Polymers","Complexes"), main=
+     #"iRefIndex Records per Interaction Type")
      #edit(iRef_complex[1:10,])
      }
