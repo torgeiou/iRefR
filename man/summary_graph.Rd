@@ -20,7 +20,7 @@ Here "iRefR" uses the "graph", "igraph" and "RBGL" libraries.
      \author{Antonio Mora <antoniocmora@gmail.com>}
      \examples{
      ## get tables
-     irefindex_curr_ecoli = get_irefindex("562", "current", tempdir())
+     irefindex_curr_ecoli = get_irefindex("562", "13.0", tempdir())
      INTACT_curr_ecoli = select_database("intact", irefindex_curr_ecoli, "this_database")
      edgeList_ecoli = convert_MITAB_to_edgeList(INTACT_curr_ecoli, "default", "spoke")
      graph_ecoli = convert_edgeList_to_graph(edgeList_ecoli, graphical_package="igraph")

@@ -25,7 +25,7 @@ The np score (number pmids) is the total number of unique PMIDs used to support 
      \author{Antonio Mora <antoniocmora@gmail.com>}
      \examples{
      ## get tables
-     irefindex_curr_ecoli = get_irefindex("562", "current", tempdir())
+     irefindex_curr_ecoli = get_irefindex("562", "13.0", tempdir())
      iRef_complex = select_interaction_type("complex", irefindex_curr_ecoli)
 
      ## execute function

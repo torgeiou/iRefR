@@ -19,7 +19,7 @@
      \author{Antonio Mora <antoniocmora@gmail.com>}
      \examples{
      ## get tables
-     irefindex_curr_ecoli = get_irefindex("562", "current", tempdir())
+     irefindex_curr_ecoli = get_irefindex("562", "13.0", tempdir())
      iRef_binary = select_interaction_type("binary", irefindex_curr_ecoli)
      iRef_complex = select_interaction_type("complex", irefindex_curr_ecoli)
 

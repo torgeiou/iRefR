@@ -17,14 +17,14 @@
      \author{Antonio Mora <antoniocmora@gmail.com>}
      \examples{
      ## get tables
-     irefindex_80_ecoli = get_irefindex("562", "8.0", tempdir())
+     irefindex_13_ecoli = get_irefindex("562", "13.0", tempdir())
 
      ## execute function
-     general_ecoli_statistics = summary_table(irefindex_80_ecoli)
-     intact_statistics = summary_table(select_database("intact", irefindex_80_ecoli,
+     general_ecoli_statistics = summary_table(irefindex_13_ecoli)
+     intact_statistics = summary_table(select_database("intact", irefindex_13_ecoli,
  "this_database"))
      complexes_statistics = summary_table(select_interaction_type("complex",
- irefindex_80_ecoli))
+ irefindex_13_ecoli))
      low_thruput_statistics = summary_table(select_confidence("lpr", c(1,2),
- irefindex_80_ecoli))
+ irefindex_13_ecoli))
      }

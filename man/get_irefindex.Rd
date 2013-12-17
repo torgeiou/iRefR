@@ -12,7 +12,7 @@
      }
      \arguments{
        \item{tax_id}{Taxon ID of the organism ("10090" for mouse, "10116" for rat, "4932" for S.Cerevisiae, "562" for E.Coli, "6239" for C.Elegans, "7227" for D.Melanogaster, "9606" for H.Sapiens, and "All" for all organisms). Default="All".}
-       \item{iref_version}{iRefIndex distribution ("7.0", "8.0", "9.0", "10.0", "11.0", "12.0" or "current"). Default="current".}
+       \item{iref_version}{iRefIndex distribution ("7.0", "8.0", "9.0", "10.0", "11.0", "12.0", "13.0" or "current"). Default="current".}
        \item{data_folder}{Folder to save the iRefIndex flat file: type "data" to save it in the "iRefR/data" directory, "home" to save it in the "R.home()" directory, or any other destination folder. Default=getwd().}
      }
      \value{
@@ -21,6 +21,6 @@
      \author{Antonio Mora <antoniocmora@gmail.com>}
      \examples{
      ## execute function
-     irefindex_80_ecoli = get_irefindex(tax_id="562", iref_version="8.0", data_folder=
+     irefindex_13_ecoli = get_irefindex(tax_id="562", iref_version="13.0", data_folder=
  tempdir())
      }

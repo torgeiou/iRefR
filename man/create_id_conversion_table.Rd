@@ -23,7 +23,7 @@ On iROGs and icROGs:
      \author{Antonio Mora <antoniocmora@gmail.com>}
      \examples{
      ## get table
-     irefindex_curr_ecoli = get_irefindex("562", "current", tempdir())
+     irefindex_curr_ecoli = get_irefindex("562", "13.0", tempdir())
 
      ## execute function
      id_conversion_table_ecoli = create_id_conversion_table(irefindex_curr_ecoli,

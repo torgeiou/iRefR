@@ -27,7 +27,7 @@ On iROGs and icROGs:
      \examples{
      \dontrun{
      ## get tables
-     irefindex_curr_ecoli = get_irefindex("562", "current", tempdir())
+     irefindex_curr_ecoli = get_irefindex("562", "13.0", tempdir())
      iRef_binary = select_interaction_type("binary", irefindex_curr_ecoli)
      iRef_complex = select_interaction_type("complex", irefindex_curr_ecoli)
      known_complexes_ecoli_complexList = convert_MITAB_to_complexList(iRef_complex,

@@ -23,7 +23,7 @@ On iROGs and icROGs:
      \author{Antonio Mora <antoniocmora@gmail.com>}
      \examples{
      ## get tables
-     irefindex_curr_ecoli = get_irefindex("562", "current", tempdir())
+     irefindex_curr_ecoli = get_irefindex("562", "13.0", tempdir())
      all_INTACT = select_database("intact", irefindex_curr_ecoli, "this_database")
      binary_INTACT = select_interaction_type("binary", all_INTACT)
      complex_INTACT = select_interaction_type("complex", all_INTACT)

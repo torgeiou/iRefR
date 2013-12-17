@@ -14,7 +14,7 @@ On iROGs and icROGs:
      }
      \usage{
      convert_MITAB_to_complexList(MITAB_table, canonical_rep,
- include_generated_complexes, list_methods, bait_use)
+ include_generated_complexes, list_methods, bait_use, node_names)
      }
      \arguments{
        \item{MITAB_table}{iRefIndex/MITAB R table.}
@@ -22,6 +22,7 @@ On iROGs and icROGs:
        \item{include_generated_complexes}{Parameter to include a set of complexes generated from binary-represented interactions that might be spoke-represented or misrepresented complexes, according to an "iRefR" algorithm that searches for groups of proteins coming from co-precipitation experiments, sharing the same PMID, source database and bait (when available). The user can choose between ignoring those records for which bait-prey information is not available or generating complexes from proteins with no bait information but 3 or more neighbors. To be used when the user can accept hypothetical complexes in the analysis. Default="no".}
        \item{list_methods}{Vector with a list of experimental methods that the user assumes should offer co-complexing information (when regenerating complexes). Methods should be described according to the MI-ontology format (see: http://www.ebi.ac.uk/ontology-lookup/browse.do?ontName=MI under "interaction detection method"). The user can either introduce a vector with the MI terms corresponding to the methods of interest or use the "default" parameter. The methods listed under "default" are: MI:0004, MI:0006, MI:0007, MI:0019, MI:0027, MI:0028, MI:0029, MI:0059, MI:0061, MI:0071, MI:0096, MI:0114, MI:0226, MI:0227, MI:0401, MI:0437, MI:0676, MI:0858 and MI:0963. The description of these methods can be found at the above-mentioned web address. Some other methods the user might be interested to add might be: MI:0067, MI:0038, MI:0104, MI:0826, MI:0069, MI:0894, MI:0893, MI:0938, MI:0099, MI:0888, MI:0966, MI:0825, MI:0824, MI:0025, MI:0928, MI:1022, MI:0982, MI:0807, MI:0276, MI:0404, MI:0808, MI:0412 and MI:0413. Default="default".}
        \item{bait_use}{Decision of either using only records with bait-prey information ("only_baits") or including records with no bait-prey information ("include_non_baits"), when regenerating complexes from binaries that share the same selected interaction method, PMID and source database. If the first case is chosen, all complexes will be generated as a spoke model around the bait protein. If the second case is chosen, complexes will be additionally generated as spoke models around every protein with 3 or more neighbors, for groups of proteins without bait-prey information. Default="only_baits".}
+       \item{node_names}{Decision of either using iRefIndex ROG Identifiers or iRefIndex UIDs. Default="rogs".}
      }
      \value{
      \item{complexList}{iRefIndex/complexList R table corresponding to the original MITAB table.}
@@ -30,7 +31,7 @@ On iROGs and icROGs:
      \examples{
      \dontrun{
      ## get tables
-     irefindex_curr_ecoli = get_irefindex("562", "current", tempdir())
+     irefindex_curr_ecoli = get_irefindex("562", "13.0", tempdir())
      iRef_binary = select_interaction_type("binary", irefindex_curr_ecoli)
 
      ## execute function
